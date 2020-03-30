@@ -52,21 +52,19 @@ module.exports = function(Config) {
     });
 
     this.createBanMessage = (messageTitle, profileField, userField, dateField, imagePath) => {
+		var messageEmbed = new Discord.MessageEmbed()
+			.setColor('#ff0000')
+            .setTitle(messageTitle)
+            .addFields(profileField, userField, dateField)
+            .setTimestamp()
+            .setFooter('SteamBanChecker by IceQ1337', authorImageURL);
+			
         if (imagePath) {
-            return new Discord.MessageEmbed()
-            .setTitle(messageTitle)
-            .addFields(profileField, userField, dateField)
-            .attachFiles([imagePath])
-            .setImage('attachment://' + Path.parse(imagePath).base)
-            .setTimestamp()
-            .setFooter('SteamBanChecker by IceQ1337', authorImageURL);
-        } else {
-            return new Discord.MessageEmbed()
-            .setTitle(messageTitle)
-            .addFields(profileField, userField, dateField)
-            .setTimestamp()
-            .setFooter('SteamBanChecker by IceQ1337', authorImageURL);
-        }
+			messageEmbed.attachFiles([imagePath]);
+            messageEmbed.setImage('attachment://' + Path.parse(imagePath).base);
+		}
+		
+		return messageEmbed;
     };
 
     this.createStatsMessage = (messageTitle, totalProfilesField, bannedProfilesField, percentageField, totalProfilesUserField, bannedProfilesUserField, percentageUserField) => {
