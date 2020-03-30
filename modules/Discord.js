@@ -53,11 +53,11 @@ module.exports = function(Config) {
 
     this.createBanMessage = (messageTitle, profileField, userField, dateField, imagePath) => {
 		var messageEmbed = new Discord.MessageEmbed()
-			.setColor('#ff0000')
-            .setTitle(messageTitle)
-            .addFields(profileField, userField, dateField)
-            .setTimestamp()
-            .setFooter('SteamBanChecker by IceQ1337', authorImageURL);
+		.setColor('#ff0000')
+		.setTitle(messageTitle)
+		.addFields(profileField, userField, dateField)
+		.setTimestamp()
+		.setFooter('SteamBanChecker by IceQ1337', authorImageURL);
 			
         if (imagePath) {
 			messageEmbed.attachFiles([imagePath]);
