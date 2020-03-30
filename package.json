@@ -1,0 +1,25 @@
+{
+  "name": "steambanchecker_discord",
+  "version": "1.0.0",
+  "description": "https://github.com/SteamBanChecker for Discord",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Steam",
+    "Ban",
+    "Checker",
+    "Discord"
+  ],
+  "author": "IceQ1337",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.1.1",
+    "nedb": "^1.8.0",
+    "request": "^2.88.2",
+    "steamid": "^1.1.3",
+    "webshot-node": "^0.18.2",
+    "xml2js": "^0.4.23"
+  }
+}

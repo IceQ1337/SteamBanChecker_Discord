@@ -1,0 +1,18 @@
+{
+	"General": {
+		"checkInterval": 10
+	},
+	"Steam": {
+		"apiKey": "STEAM API KEY"
+	},
+	"Discord": {
+		"botToken": "DISCORD BOT TOKEN",
+		"channelID": "DISCORD CHANNEL ID",
+		"botPrefix": "!",
+		"roleName": "BAN CHECKER ACCESS ROLE NAME"
+	},
+	"Screenshot": {
+		"saveScreenshot": true,
+		"sendScreenshot": true
+	}
+}
