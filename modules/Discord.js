@@ -26,7 +26,7 @@ module.exports = function(Config) {
     this.client.on('message', (message) => {
         const _this = this;
 
-        if (message.author.bot) return;
+        if (!Config.General.allowBotCommands && message.author.bot) return;
         if (message.content.indexOf(Config.Discord.botPrefix) !== 0) return;
 
         const channelType = message.channel.type;

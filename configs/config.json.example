@@ -1,6 +1,7 @@
 {
 	"General": {
-		"checkInterval": 10
+		"checkInterval": 10,
+		"allowBotCommands": false
 	},
 	"Steam": {
 		"apiKey": "STEAM API KEY"
