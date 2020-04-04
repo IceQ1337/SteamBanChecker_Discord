@@ -32,9 +32,9 @@ module.exports = function(Config) {
         const channelType = message.channel.type;
         const channelName = message.channel.name;
         const channelID = message.channel.id;
-        if (channelType != 'text' || !channelName || channelID != Config.Discord.channelID) return;
+        if (channelType != 'text' || !channelName || channelID != Config.Discord.botChannel) return;
 
-        if (message.member.roles.cache.some(role => role.name === Config.Discord.roleName)) {
+        if (!Config.Discord.accessRole || message.member.roles.cache.some(role => role.name === Config.Discord.accessRole)) {
             const arguments = message.content.slice(Config.Discord.botPrefix.length).trim().split(/ +/g);
             const command = arguments.shift().toLowerCase();
 
@@ -81,6 +81,6 @@ module.exports = function(Config) {
 
     this.sendMessage = (messageText) => {
         const _this = this;
-        _this.client.channels.cache.get(Config.Discord.channelID).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
+        _this.client.channels.cache.get(Config.Discord.botChannel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
     };
 }

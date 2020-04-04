@@ -8,9 +8,9 @@
 	},
 	"Discord": {
 		"botToken": "DISCORD BOT TOKEN",
-		"channelID": "DISCORD CHANNEL ID",
+		"botChannel": "DISCORD CHANNEL ID",
 		"botPrefix": "!",
-		"roleName": "BAN CHECKER ACCESS ROLE NAME"
+		"accessRole": "BAN CHECKER ACCESS ROLE NAME"
 	},
 	"Screenshot": {
 		"saveScreenshot": true,
