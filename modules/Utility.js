@@ -34,7 +34,8 @@ module.exports = function() {
                 if (response.statusCode && response.statusCode === 200) {
                     XML.parseString(body, (err, result) => {
                         if (err) reject(err);
-                        resolve(result.profile.steamID64[0]);
+                        if(result && result.profile && result.profile.steamID64[0]) resolve(result.profile.steamID64[0]);
+                        resolve();
                     });
                 } else {
                     reject();
