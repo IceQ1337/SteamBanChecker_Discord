@@ -5,3 +5,6 @@ https://github.com/SteamBanChecker for Discord
 1. `npm install`
 2. rename `config.json.example` to `config.json`
 3. fill in `config.json` details
+
+## Usage
+1. `/add profileURL` in order to check profiles.
