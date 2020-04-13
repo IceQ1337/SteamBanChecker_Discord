@@ -10,7 +10,8 @@
 		"botToken": "DISCORD BOT TOKEN",
 		"botChannel": "DISCORD CHANNEL ID",
 		"botPrefix": "!",
-		"accessRole": "BAN CHECKER ACCESS ROLE NAME"
+		"accessRole": "BAN CHECKER ACCESS ROLE NAME",
+		"botChannelResponse": ""
 	},
 	"Screenshot": {
 		"saveScreenshot": true,

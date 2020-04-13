@@ -81,6 +81,7 @@ module.exports = function(Config) {
 
     this.sendMessage = (messageText) => {
         const _this = this;
-        _this.client.channels.cache.get(Config.Discord.botChannel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
+        const targetChannel = (Config.Discord.botChannelResponse ? Config.Discord.botChannelResponse : Config.Discord.botChannel);
+        _this.client.channels.cache.get(targetChannel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
     };
 }
