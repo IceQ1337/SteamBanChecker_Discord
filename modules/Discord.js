@@ -26,16 +26,16 @@ module.exports = function(Config) {
     this.client.on('message', (message) => {
         const _this = this;
 
-        if (!Config.General.allowBotCommands && message.author.bot) return;
-        if (message.content.indexOf(Config.Discord.botPrefix) !== 0) return;
+        if (!Config.Discord.allowBotCommands && message.author.bot) return;
+        if (message.content.indexOf(Config.Discord.botCommandPrefix) !== 0) return;
 
         const channelType = message.channel.type;
         const channelName = message.channel.name;
         const channelID = message.channel.id;
-        if (channelType != 'text' || !channelName || channelID != Config.Discord.botChannel) return;
+        if (channelType != 'text' || !channelName || channelID != Config.Discord.botChannelInput) return;
 
         if (!Config.Discord.accessRole || message.member.roles.cache.some(role => role.name === Config.Discord.accessRole)) {
-            const arguments = message.content.slice(Config.Discord.botPrefix.length).trim().split(/ +/g);
+            const arguments = message.content.slice(Config.Discord.botCommandPrefix.length).trim().split(/ +/g);
             const command = arguments.shift().toLowerCase();
 
             if (command === 'add') {
@@ -81,7 +81,7 @@ module.exports = function(Config) {
 
     this.sendMessage = (messageText) => {
         const _this = this;
-        const targetChannel = (Config.Discord.botChannelResponse ? Config.Discord.botChannelResponse : Config.Discord.botChannel);
+        const targetChannel = (Config.Discord.botChannelOutput ? Config.Discord.botChannelOutput : Config.Discord.botChannelInput);
         _this.client.channels.cache.get(targetChannel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
     };
 }
