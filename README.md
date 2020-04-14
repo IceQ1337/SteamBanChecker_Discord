@@ -4,6 +4,8 @@
 
 As requested by many people, the [Steam Ban Checker](https://github.com/IceQ1337/SteamBanChecker) is now also available with Discord integration.
 
+## [Telegram Version](https://github.com/IceQ1337/SteamBanChecker) | [Discord Version](https://github.com/IceQ1337/SteamBanChecker_Discord)
+
 ## Requirements
 In order to use this script, you need the following dependencies and tokens:
 
