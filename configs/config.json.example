@@ -7,7 +7,7 @@
 	},
 	"Discord": {
 		"botToken": "DISCORD BOT TOKEN",
-		"botChannelInput": "DISCORD CHANNEL ID (Input)",
+		"botChannelInput": "DISCORD CHANNEL ID",
 		"botChannelOutput": "",
 		"botCommandPrefix": "!",
 		"allowBotCommands": false,
