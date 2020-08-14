@@ -27,7 +27,7 @@ class SteamAPI extends EventEmitter {
                 const apiData = JSON.parse(body);
                 if (apiData.players && apiData.players.length > 0 && apiData.players[0].SteamId) {
                     const player = apiData.players[0];
-                    const playerData = { SteamID: player.SteamId, CommunityBanned: player.CommunityBanned, VACBanned: player.VACBanned, NumberOfVACBans: player.NumberOfVACBans, NumberOfGameBans: player.NumberOfGameBans, Tracked: true, User: message.author.tag, Date: Date.now() };
+                    const playerData = { SteamID: player.SteamId, CommunityBanned: player.CommunityBanned, VACBanned: player.VACBanned, NumberOfVACBans: player.NumberOfVACBans, NumberOfGameBans: player.NumberOfGameBans, Tracked: true, User: message.author.id, Date: Date.now() };
                     _this.emit('playerdata', playerData, message);
                 } else {
                     _this.emit('error', 'queryProfile', 'INVALID RESPONSE');

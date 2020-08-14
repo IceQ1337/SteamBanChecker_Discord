@@ -98,6 +98,10 @@ SteamAPI.on('ban', (type, player, user, date) => {
     const profileURL = SteamAPI.profileURL + player.SteamId;
 
     const profileField = { name: 'Profile-URL', value: profileURL};
+    if (!user.includes('#')) {
+        let temp = user;
+        user = `<@${temp}>`;
+    }
     const userField = { name: 'Added By', value: user, inline: true };
     const dateField = { name: 'Added On', value: Utility.toUTC(date), inline: true };
 
