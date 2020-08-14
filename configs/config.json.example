@@ -10,6 +10,7 @@
 		"botChannelInput": "DISCORD CHANNEL ID",
 		"botChannelOutput": "",
 		"botCommandPrefix": "!",
+		"botCommand": "",
 		"allowBotCommands": false,
 		"accessRole": ""
 	},

@@ -38,7 +38,8 @@ module.exports = function(Config) {
             const arguments = message.content.slice(Config.Discord.botCommandPrefix.length).trim().split(/ +/g);
             const command = arguments.shift().toLowerCase();
 
-            if (command === 'add') {
+            const addCommand = Config.Discord.botCommand ? Config.Discord.botCommand : 'add';
+            if (command === addCommand) {
                 const argument = arguments.join(' ');
                 _this.events.emit('add', argument, message);
             }
