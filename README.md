@@ -57,6 +57,7 @@ In most cases, files only need to be overwritten, renamed or moved, but this pro
 }
 ```
 
+- `botChannelInput` can be an array of multiple channels.
 - `botChannelOutput` is optional. If empty, messages will be sent to the Input Channel.
 - `accessRole` is optional. If empty, everybody is allowed to use commands.
 
