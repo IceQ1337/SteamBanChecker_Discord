@@ -32,7 +32,9 @@ module.exports = function(Config) {
         const channelType = message.channel.type;
         const channelName = message.channel.name;
         const channelID = message.channel.id;
-        if (channelType != 'text' || !channelName || channelID != Config.Discord.botChannelInput) return;
+
+        const inputChannel = Config.Discord.botChannelInput;
+        if (channelType != 'text' || !channelName || (!Array.isArray(inputChannel) && channelID != inputChannel) || (Array.isArray(inputChannel) && !inputChannel.includes(channelID))) return;
 
         if (!Config.Discord.accessRole || message.member.roles.cache.some(role => role.name === Config.Discord.accessRole)) {
             const arguments = message.content.slice(Config.Discord.botCommandPrefix.length).trim().split(/ +/g);
