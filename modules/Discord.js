@@ -85,6 +85,13 @@ module.exports = function(Config) {
     this.sendMessage = (messageText) => {
         const _this = this;
         const targetChannel = (Config.Discord.botChannelOutput ? Config.Discord.botChannelOutput : Config.Discord.botChannelInput);
-        _this.client.channels.cache.get(targetChannel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
+
+        if (Array.isArray(targetChannel)) {
+            targetChannel.forEach((channel) => {
+                _this.client.channels.cache.get(channel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
+            });
+        } else {
+            _this.client.channels.cache.get(targetChannel).send(messageText).catch((err) => _this.events.emit('error', 'sendMessage', err));
+        }
     };
 }
