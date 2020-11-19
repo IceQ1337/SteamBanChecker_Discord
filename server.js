@@ -109,17 +109,10 @@ SteamAPI.on('ban', (type, player, user, date) => {
         const messageEmbed = Discord.createBanMessage('A profile just got community banned!', profileField, userField, dateField);
         Discord.sendMessage(messageEmbed);
     } else {
-        var message;
-        if (type == 'vac') {
-            message = 'A profile just got VAC banned!';
-        } else if (type == 'vac_multiple') {
-            message = 'A profile just got VAC banned again!';
-        } else if (type == 'game') {
-            message = 'A profile just got game banned!';
-        } else if (type == 'game_multiple') {
-            message = 'A profile just got game banned again!';
-        }
+        const banType = type.includes('vac') ? 'VAC' : 'game';
+        const banMultiple = type.includes('multiple');
 
+        const message = `A profile just got ${banType} banned${banMultiple ? ' again!': '!'}`;
         const messageEmbed = Discord.createBanMessage(message, profileField, userField, dateField);
 
         if (Config.Screenshot.saveScreenshot) {
