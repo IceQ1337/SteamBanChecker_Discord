@@ -10,7 +10,7 @@ As requested by many people, the [Steam Ban Checker](https://github.com/IceQ1337
 In order to use this script, you need the following dependencies and tokens:
 
 - Node.js: https://nodejs.org/en/ 
-  - Compatible with Version 16+
+  - Compatible with Version 12 or higher
 - Steam API Key: https://steamcommunity.com/dev/apikey
 - Discord Bot Token: https://discordapp.com/developers/applications
 - Discord Channel ID: [Retrieve your Discord Channel ID](#retrieve-your-discord-channel-id)
