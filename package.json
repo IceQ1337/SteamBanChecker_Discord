@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/IceQ1337/SteamBanChecker_Discord#readme",
   "dependencies": {
-    "discord.js": "^13.1.0",
+    "discord.js": "^12.5.3",
     "nedb": "^1.8.0",
     "request": "^2.88.2",
     "steamid": "^2.0.0",
