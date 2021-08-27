@@ -4,6 +4,9 @@
 
 As requested by many people, the [Steam Ban Checker](https://github.com/IceQ1337/SteamBanChecker) is now also available with Discord integration.
 
+:warning: | **WARNING: THIS PROJECT IS NO LONGER ACTIVELY MAINTAINED** 
+:---: | :---
+
 ## [Telegram Version](https://github.com/IceQ1337/SteamBanChecker) | [Discord Version](https://github.com/IceQ1337/SteamBanChecker_Discord)
 
 ## Requirements
